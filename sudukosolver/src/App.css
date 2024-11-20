@@ -1,0 +1,92 @@
+/* Center the Sudoku board */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f3f4f6; /* Light background */
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+h1 {
+  text-align: center; /* Align the text to the center */
+  font-weight: bold; /* Make the text bold */
+  text-decoration: underline; /* Underline the text */
+  font-size: 28px; /* Optional: Adjust font size */
+  margin-bottom: 20px; /* Optional: Add space below the heading */
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(9, 40px);
+  gap: 1px; /* Small gap between cells */
+  border: 3px solid #333; /* Outer grid border */
+  border-radius: 10px;
+  background-color: #fff;
+  padding: 32px 48px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 8px 8px 24px 0px rgb(25, 19, 19);
+}
+
+/* Sudoku input cells */
+.grid-container input {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  font-size: 18px;
+  border: 2px solid #ccc;
+  outline: none;
+  background-color: #fff; /* White cell background */
+  color: #333;
+  font-weight: bold;
+}
+
+.grid-container input:focus {
+  background-color: #f0f0f0; /* Light gray on focus */
+  border-color: #007bff; /* Blue border on focus */
+}
+
+/* Thicker borders for 3x3 sub-grid separation */
+.grid-container input:nth-child(3n) {
+  border-right: 3px solid #333;
+}
+.grid-container input:nth-child(27n + 1) {
+  border-bottom: 3px solid #333;
+}
+/* Buttons styling */
+button {
+  margin-top: 20px;
+  padding: 15px 30px; /* Increase padding for larger size */
+  font-size: 18px; /* Bigger font size */
+  font-weight: bold;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 8px; /* Slightly rounded corners */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-right: 30px; /* Increase spacing between buttons */
+}
+
+button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+button:active {
+  transform: scale(0.97); /* Slightly shrink on click */
+  background-color: #004080; /* Even darker blue on click */
+}
+
+/* Reset button with a different color */
+button:nth-child(2) {
+  background-color: #dc3545; /* Red color */
+}
+
+button:nth-child(2):hover {
+  background-color: #c82333;
+}
+
+button:nth-child(2):active {
+  background-color: #a71d2a;
+}
